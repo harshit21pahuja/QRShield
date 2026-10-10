@@ -1,0 +1,42 @@
+# Virtual Environments
+.venv/
+.venv*/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+
+# Datasets and Big Data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+DATASET/
+gpu_bundle/
+_final_ml_v2/
+_final_ml_backup/
+*.zip
+*.tar.gz
+
+# Ignore massive audit CSV files (>100MB GitHub limit)
+artifacts/qr_dataset_audit/
+artifacts/data_audit/
+*.csv
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
+
+# Pytest & Jupyter
+.pytest_cache/
+.ipynb_checkpoints/

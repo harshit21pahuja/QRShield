@@ -1,0 +1,18 @@
+{
+  "dataset_root": "data\\processed\\image_dev",
+  "train_samples": 5000,
+  "val_samples": 1000,
+  "test_samples": 1000,
+  "train_label_counts": {
+    "0": 229,
+    "1": 4771
+  },
+  "val_label_counts": {
+    "0": 101,
+    "1": 899
+  },
+  "test_label_counts": {
+    "0": 161,
+    "1": 839
+  }
+}

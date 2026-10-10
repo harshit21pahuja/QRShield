@@ -1,0 +1,8 @@
+{
+  "fusion_method": "prediction-level soft voting",
+  "url_weight": 0.55,
+  "image_weight": 0.44999999999999996,
+  "fusion_threshold": 0.543407387150166,
+  "calibration_method": "IsotonicRegression",
+  "urls_contacted": false
+}

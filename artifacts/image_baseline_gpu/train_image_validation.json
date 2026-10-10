@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "sample_limit": 10,
+  "valid_samples": 10,
+  "issues": [],
+  "dimension_summary": {
+    "198x198": 4,
+    "222x222": 4,
+    "246x246": 2
+  },
+  "mode_summary": {
+    "RGB": 10
+  }
+}

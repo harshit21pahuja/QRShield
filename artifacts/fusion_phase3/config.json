@@ -1,0 +1,13 @@
+{
+  "fusion_method": "prediction-level soft voting",
+  "url_model": "RandomForestClassifier",
+  "image_model": "MobileNetV2",
+  "url_weight": 0.55,
+  "image_weight": 0.44999999999999996,
+  "threshold": 0.543407387150166,
+  "train_samples": 50000,
+  "validation_samples": 10000,
+  "test_samples": 10000,
+  "safe_static_analysis": true,
+  "urls_contacted": false
+}

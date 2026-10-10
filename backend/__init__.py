@@ -1,0 +1,3 @@
+"""
+QRShield — Backend Package
+"""

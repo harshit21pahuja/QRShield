@@ -1,0 +1,11 @@
+{
+  "model": "RandomForestClassifier",
+  "branch": "URL-only",
+  "train_samples": 50000,
+  "val_samples": 10000,
+  "test_samples": 10000,
+  "feature_count": 29,
+  "threshold": 0.3938141096698284,
+  "safe_static_analysis": true,
+  "urls_contacted": false
+}

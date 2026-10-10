@@ -1,0 +1,11 @@
+{
+  "method": "IsotonicRegression",
+  "url_weight": 0.55,
+  "image_weight": 0.44999999999999996,
+  "test_brier_before": 0.026589784557342663,
+  "test_brier_after": 0.010215229266301858,
+  "test_roc_auc_before": 0.9967223480821362,
+  "test_roc_auc_after": 0.9964471508964503,
+  "test_pr_auc_before": 0.9993192813034475,
+  "test_pr_auc_after": 0.9990761372863066
+}

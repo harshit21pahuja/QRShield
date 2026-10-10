@@ -1,0 +1,21 @@
+{
+  "output_dir": "C:\\Users\\Harshit Pahuja\\Desktop\\New folder\\QRShield\\artifacts\\image_baseline",
+  "model_name": "MobileNetV2",
+  "pretrained": true,
+  "image_size": 224,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "epochs": 1,
+  "patience": 3,
+  "threshold": 0.43999999999999995,
+  "seed": 42,
+  "class_weighting": "balanced",
+  "train_csv": "C:\\Users\\Harshit Pahuja\\Desktop\\New folder\\QRShield\\data\\processed\\final_splits\\train.csv",
+  "val_csv": "C:\\Users\\Harshit Pahuja\\Desktop\\New folder\\QRShield\\data\\processed\\final_splits\\val.csv",
+  "test_csv": "C:\\Users\\Harshit Pahuja\\Desktop\\New folder\\QRShield\\data\\processed\\final_splits\\test.csv",
+  "device": "cpu",
+  "train_samples": 500,
+  "val_samples": 100,
+  "test_samples": 100
+}

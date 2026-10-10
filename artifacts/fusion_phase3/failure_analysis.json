@@ -1,0 +1,68 @@
+{
+  "test_samples": 10000,
+  "false_positives": 90,
+  "false_negatives": 33,
+  "shap_samples": 1000,
+  "top_features": [
+    {
+      "feature": "path_entropy",
+      "mean_abs_shap": 0.07144339679079637
+    },
+    {
+      "feature": "path_length",
+      "mean_abs_shap": 0.06240222971643979
+    },
+    {
+      "feature": "num_subdomains",
+      "mean_abs_shap": 0.05150317666400444
+    },
+    {
+      "feature": "num_hyphens",
+      "mean_abs_shap": 0.05124412100488887
+    },
+    {
+      "feature": "hostname_entropy",
+      "mean_abs_shap": 0.03942841916429641
+    },
+    {
+      "feature": "has_ip_hostname",
+      "mean_abs_shap": 0.03150964298310461
+    },
+    {
+      "feature": "url_length",
+      "mean_abs_shap": 0.029679521611210843
+    },
+    {
+      "feature": "num_dots",
+      "mean_abs_shap": 0.02707296623837576
+    },
+    {
+      "feature": "hostname_length",
+      "mean_abs_shap": 0.02590778832500091
+    },
+    {
+      "feature": "num_slashes",
+      "mean_abs_shap": 0.025850471939691692
+    },
+    {
+      "feature": "url_entropy",
+      "mean_abs_shap": 0.02552005060394535
+    },
+    {
+      "feature": "special_ratio",
+      "mean_abs_shap": 0.024531250808657486
+    },
+    {
+      "feature": "has_https",
+      "mean_abs_shap": 0.022662013892778686
+    },
+    {
+      "feature": "hostname_hyphen_count",
+      "mean_abs_shap": 0.020316424010574253
+    },
+    {
+      "feature": "digit_ratio",
+      "mean_abs_shap": 0.017944737604008155
+    }
+  ]
+}

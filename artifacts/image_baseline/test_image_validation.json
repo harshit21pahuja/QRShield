@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "sample_limit": 10,
+  "valid_samples": 10,
+  "issues": [],
+  "dimension_summary": {
+    "222x222": 6,
+    "198x198": 2,
+    "270x270": 1,
+    "438x438": 1
+  },
+  "mode_summary": {
+    "RGB": 10
+  }
+}
