@@ -7,11 +7,9 @@ import {
   UploadCloud,
   Eye,
   Activity,
-  Cpu,
   Lock,
   CheckCircle2,
   XCircle,
-  Info,
   Copy,
   Check,
   Zap,
@@ -20,7 +18,9 @@ import {
   Image as ImageIcon
 } from 'lucide-react';
 
-const API_BASE = 'http://127.0.0.1:8000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://127.0.0.1:8000';
+const MAX_UPLOAD_BYTES = 10 * 1024 * 1024; // 10 MB
+const ALLOWED_IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp'];
 
 export default function App() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -35,25 +35,56 @@ export default function App() {
 
   // Health check on component mount
   useEffect(() => {
-    checkHealth();
-  }, []);
-
-  const checkHealth = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/health`);
-      if (res.ok) {
-        const data = await res.json();
-        setHealthStatus(data);
-      } else {
-        setHealthStatus({ status: 'degraded' });
+    let isMounted = true;
+    const fetchHealth = async () => {
+      try {
+        const res = await fetch(`${API_BASE}/health`);
+        if (!isMounted) return;
+        if (res.ok) {
+          const data = await res.json();
+          setHealthStatus(data);
+        } else {
+          setHealthStatus({ status: 'degraded' });
+        }
+      } catch {
+        if (isMounted) {
+          setHealthStatus({ status: 'offline' });
+        }
       }
-    } catch {
-      setHealthStatus({ status: 'offline' });
-    }
-  };
+    };
+
+    fetchHealth();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleFileChange = (file) => {
     if (!file) return;
+
+    // Client-side file size validation (10 MB limit)
+    if (file.size > MAX_UPLOAD_BYTES) {
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(1);
+      setError(`File size (${sizeMb} MB) exceeds maximum upload limit of 10 MB. Please upload a smaller image.`);
+      setSelectedFile(null);
+      setPreviewUrl(null);
+      setResult(null);
+      return;
+    }
+
+    // Client-side format validation
+    const nameLower = file.name.toLowerCase();
+    const hasValidExt = ALLOWED_IMAGE_EXTENSIONS.some((ext) => nameLower.endsWith(ext));
+    const hasValidType = file.type ? file.type.startsWith('image/') : false;
+
+    if (!hasValidExt && !hasValidType) {
+      setError(`Unsupported file type '${file.type || file.name}'. Please upload a PNG, JPG, or WEBP image.`);
+      setSelectedFile(null);
+      setPreviewUrl(null);
+      setResult(null);
+      return;
+    }
+
     setSelectedFile(file);
     setError(null);
     setResult(null);
@@ -79,6 +110,9 @@ export default function App() {
   const loadSample = async (samplePath, filename) => {
     try {
       const res = await fetch(samplePath);
+      if (!res.ok) {
+        throw new Error(`Sample file '${filename}' could not be fetched.`);
+      }
       const blob = await res.blob();
       const file = new File([blob], filename, { type: blob.type || 'image/png' });
       handleFileChange(file);
@@ -97,21 +131,38 @@ export default function App() {
     const formData = new FormData();
     formData.append('file', selectedFile);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 25000); // 25s timeout
+
     try {
       const response = await fetch(`${API_BASE}/predict`, {
         method: 'POST',
         body: formData,
+        signal: controller.signal,
       });
 
-      const data = await response.json();
+      clearTimeout(timeoutId);
 
-      if (!response.ok || data.status === 'error') {
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        data = { status: 'error', error: `Server returned HTTP ${response.status}` };
+      }
+
+      if (response.status === 413) {
+        setError('File exceeds maximum upload size limit (10 MB). Please choose a smaller image.');
+      } else if (!response.ok || data.status === 'error') {
         setError(data.error || 'Failed to analyze QR code.');
       } else {
         setResult(data);
       }
     } catch (err) {
-      setError(`Cannot reach QRShield backend at ${API_BASE}. Make sure the FastAPI service is running.`);
+      if (err.name === 'AbortError') {
+        setError('Analysis timed out after 25 seconds. Please try again with a clearer QR image.');
+      } else {
+        setError(`Cannot reach QRShield backend at ${API_BASE}. Make sure the FastAPI service is running.`);
+      }
     } finally {
       setLoading(false);
     }

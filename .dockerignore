@@ -1,0 +1,46 @@
+# Git & IDE
+.git
+.gitignore
+.vscode
+.idea
+*.swp
+*.swo
+
+# Virtual Environments
+.venv/
+.venv*/
+venv/
+env/
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Node & Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Raw Datasets, Archives & Temporary Data
+DATASET/
+data/raw/
+data/processed/dev_subset.csv
+data/processed/qr_manifest*.csv
+gpu_bundle/
+_final_ml_*/
+*.zip
+*.tar.gz
+*.docx
+*.pdf
+*.html
+
+# Audits & Large Reports
+artifacts/qr_dataset_audit/
+artifacts/data_audit/
+*.csv

@@ -1,0 +1,37 @@
+# ── Stage 1: Build Frontend Assets ───────────────────────────────────────────
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+# Copy package manifests for cached dependency installation
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm ci
+
+# Copy source code and build config
+COPY frontend/ ./
+
+# Pass API base URL build argument (defaults to relative or port 8000)
+ARG VITE_API_BASE=http://localhost:8000
+ENV VITE_API_BASE=${VITE_API_BASE}
+
+# Build production bundle
+RUN npm run build
+
+# ── Stage 2: Serve with Production Nginx ─────────────────────────────────────
+FROM nginx:1.25-alpine
+
+# Install curl for container health checks
+RUN apk add --no-cache curl
+
+# Copy custom Nginx configuration
+COPY deployment/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy compiled static assets from builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD curl -f http://localhost/healthz || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]
