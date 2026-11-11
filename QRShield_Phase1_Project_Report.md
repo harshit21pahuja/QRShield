@@ -18,6 +18,7 @@
 | 3 | **Saatvik Sharma** | `s24cseu2097` | **Lexical ML Lead**: 29 URL feature extractors, Random Forest modeling, SHAP attribution engine |
 | 4 | **Tanish** | `s24cseu0589` | **Data & Security Lead**: Dataset canonicalization (CIC-Trap4Phish), zero-contact security policy, data audit |
 | 5 | **Rohit Upadhyay** | `s24cseu1359` | **Frontend & QA Lead**: React 18 / Vite user interface, explainability dashboards, end-to-end integration tests |
+| 6 | **Bharat Kumar** | `s24cse2103` | **Technical Documentation & QA Support**: Project report drafting, literature survey compilation, reference indexing, functional UI smoke testing |
 
 ---
 
@@ -348,15 +349,16 @@ Ten automated integration and unit test suites were executed with **100% pass ra
 
 ## 10. Work Distribution & Team Contribution Matrix
 
-The workload for Phase 1 was distributed evenly among all five team members according to technical specialization:
+The workload for Phase 1 was distributed among all six team members according to technical specialization:
 
 | Team Member | Roll Number | Specific Deliverables & Contributions | Percentage Effort |
 | :--- | :---: | :--- | :---: |
-| **Harshit Pahuja** *(Lead)* | `s24cseu0736` | Overall system architecture; mathematical formulation of multimodal fusion; Isotonic calibration pipeline; FastAPI backend integration; end-to-end integration testing. | 20% |
-| **Hemang Nag** | `s24cseu0728` | MobileNetV2 CNN architecture; two-stage transfer learning; PyTorch GPU training scripts; Grad-CAM gradient backpropagation engine; vision latency benchmarking. | 20% |
-| **Saatvik Sharma** | `s24cseu2097` | Feature engineering for 29 static lexical indicators; Shannon entropy implementations; Random Forest model training & hyperparameter tuning; TreeSHAP feature attribution pipeline. | 20% |
-| **Tanish** | `s24cseu0589` | CIC-Trap4Phish dataset audit and canonicalization; domain-grouped train/val/test splitting algorithms; zero-contact operational security architecture design; false positive audit. | 20% |
-| **Rohit Upadhyay** | `s24cseu1359` | Frontend UI design and implementation (React 18, Tailwind/Vanilla CSS, Lucide icons); interactive SHAP/Grad-CAM visualization dashboards; client-side error handling; user testing. | 20% |
+| **Harshit Pahuja** *(Lead)* | `s24cseu0736` | Overall system architecture; mathematical formulation of multimodal fusion; Isotonic calibration pipeline; FastAPI backend integration; end-to-end integration testing. | 17% |
+| **Hemang Nag** | `s24cseu0728` | MobileNetV2 CNN architecture; two-stage transfer learning; PyTorch GPU training scripts; Grad-CAM gradient backpropagation engine; vision latency benchmarking. | 17% |
+| **Saatvik Sharma** | `s24cseu2097` | Feature engineering for 29 static lexical indicators; Shannon entropy implementations; Random Forest model training & hyperparameter tuning; TreeSHAP feature attribution pipeline. | 17% |
+| **Tanish** | `s24cseu0589` | CIC-Trap4Phish dataset audit and canonicalization; domain-grouped train/val/test splitting algorithms; zero-contact operational security architecture design; false positive audit. | 17% |
+| **Rohit Upadhyay** | `s24cseu1359` | Frontend UI design and implementation (React 18, Tailwind/Vanilla CSS, Lucide icons); interactive SHAP/Grad-CAM visualization dashboards; client-side error handling; automated pytest execution. | 16% |
+| **Bharat Kumar** | `s24cse2103` | Technical documentation drafting; literature survey compilation and reference verification; report proofreading; manual UI smoke testing and test observation. | 16% |
 
 ---
 

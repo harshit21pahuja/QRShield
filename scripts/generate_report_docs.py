@@ -111,7 +111,7 @@ def build_docx():
 
     # Team Members Table
     doc.add_heading("Team Members & Academic Credentials", level=2)
-    team_table = doc.add_table(rows=6, cols=4)
+    team_table = doc.add_table(rows=7, cols=4)
     team_table.alignment = WD_TABLE_ALIGNMENT.CENTER
 
     headers = ["No.", "Student Name", "Roll Number", "Primary Technical Specialization"]
@@ -132,6 +132,7 @@ def build_docx():
         ("3", "Saatvik Sharma", "s24cseu2097", "Lexical ML Lead: 29 Static URL Features, Random Forest, TreeSHAP"),
         ("4", "Tanish", "s24cseu0589", "Data & Security Lead: CIC-Trap4Phish Canonicalization, Zero-Contact Policy"),
         ("5", "Rohit Upadhyay", "s24cseu1359", "Frontend & QA Lead: React 18 / Vite UI, Explainability Dashboards, Pytest"),
+        ("6", "Bharat Kumar", "s24cse2103", "Technical Documentation & QA: Report Drafting, Literature Review, Smoke Testing"),
     ]
 
     for r_idx, member in enumerate(members, start=1):
@@ -363,7 +364,7 @@ def build_docx():
 
     # Section 10: Work Distribution
     doc.add_heading("10. Work Distribution & Team Contribution Matrix", level=1)
-    contrib_table = doc.add_table(rows=6, cols=3)
+    contrib_table = doc.add_table(rows=7, cols=3)
     contrib_table.alignment = WD_TABLE_ALIGNMENT.CENTER
     c_headers = ["Member Name (Roll No)", "Key Technical Deliverables", "Effort %"]
     c_widths = [Inches(2.0), Inches(4.3), Inches(0.9)]
@@ -378,11 +379,12 @@ def build_docx():
         set_cell_shading(cell, "1E293B")
 
     contrib_data = [
-        ("Harshit Pahuja (s24cseu0736)", "System architecture, soft-voting fusion formulation, Isotonic calibration, FastAPI backend, integration testing", "20%"),
-        ("Hemang Nag (s24cseu0728)", "MobileNetV2 CNN architecture, PyTorch GPU training scripts, Grad-CAM backpropagation, vision inference benchmarking", "20%"),
-        ("Saatvik Sharma (s24cseu2097)", "29 static lexical feature extraction, Shannon entropy algorithms, Random Forest training, TreeSHAP explainability pipeline", "20%"),
-        ("Tanish (s24cseu0589)", "CIC-Trap4Phish dataset audit, canonicalization pipeline, domain-grouped splitting, zero-contact security policy design", "20%"),
-        ("Rohit Upadhyay (s24cseu1359)", "React 18 / Vite frontend dashboard, explainability UI components, client-side error handling, test execution & QA", "20%"),
+        ("Harshit Pahuja (s24cseu0736)", "System architecture, soft-voting fusion formulation, Isotonic calibration, FastAPI backend, integration testing", "17%"),
+        ("Hemang Nag (s24cseu0728)", "MobileNetV2 CNN architecture, PyTorch GPU training scripts, Grad-CAM backpropagation, vision inference benchmarking", "17%"),
+        ("Saatvik Sharma (s24cseu2097)", "29 static lexical feature extraction, Shannon entropy algorithms, Random Forest training, TreeSHAP explainability pipeline", "17%"),
+        ("Tanish (s24cseu0589)", "CIC-Trap4Phish dataset audit, canonicalization pipeline, domain-grouped splitting, zero-contact security policy design", "17%"),
+        ("Rohit Upadhyay (s24cseu1359)", "React 18 / Vite frontend dashboard, explainability UI components, client-side error handling, test execution & QA", "16%"),
+        ("Bharat Kumar (s24cse2103)", "Technical documentation drafting, literature survey compilation, reference indexing, manual UI verification & smoke testing", "16%"),
     ]
 
     for r_idx, row_vals in enumerate(contrib_data, start=1):
@@ -758,6 +760,12 @@ def build_html():
           <td><code>s24cseu1359</code></td>
           <td>Frontend & QA Lead: React 18 / Vite UI, Explainability Dashboards, Pytest</td>
         </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Bharat Kumar</strong></td>
+          <td><code>s24cse2103</code></td>
+          <td>Technical Documentation & QA: Report Drafting, Literature Review, Smoke Testing</td>
+        </tr>
       </tbody>
     </table>
 
@@ -940,31 +948,37 @@ def build_html():
           <td><strong>Harshit Pahuja</strong> (Lead)</td>
           <td><code>s24cseu0736</code></td>
           <td>Multimodal fusion formulation, Isotonic calibration, FastAPI backend integration, system test harness</td>
-          <td>20%</td>
+          <td>17%</td>
         </tr>
         <tr>
           <td><strong>Hemang Nag</strong></td>
           <td><code>s24cseu0728</code></td>
           <td>MobileNetV2 CNN architecture, PyTorch GPU training scripts, Grad-CAM backpropagation engine, vision benchmarking</td>
-          <td>20%</td>
+          <td>17%</td>
         </tr>
         <tr>
           <td><strong>Saatvik Sharma</strong></td>
           <td><code>s24cseu2097</code></td>
           <td>29 static lexical feature extraction, Shannon entropy algorithms, Random Forest tuning, TreeSHAP pipeline</td>
-          <td>20%</td>
+          <td>17%</td>
         </tr>
         <tr>
           <td><strong>Tanish</strong></td>
           <td><code>s24cseu0589</code></td>
           <td>CIC-Trap4Phish dataset audit, canonicalization pipeline, domain-grouped splitting, zero-contact policy design</td>
-          <td>20%</td>
+          <td>17%</td>
         </tr>
         <tr>
           <td><strong>Rohit Upadhyay</strong></td>
           <td><code>s24cseu1359</code></td>
           <td>React 18 / Vite frontend dashboard, interactive XAI visualizers, client-side error handling, test execution</td>
-          <td>20%</td>
+          <td>16%</td>
+        </tr>
+        <tr>
+          <td><strong>Bharat Kumar</strong></td>
+          <td><code>s24cse2103</code></td>
+          <td>Technical documentation drafting, literature survey compilation, reference indexing, manual UI verification</td>
+          <td>16%</td>
         </tr>
       </tbody>
     </table>

@@ -7,6 +7,7 @@
 **Saatvik Sharma** (Roll No: `s24cseu2097`)  
 **Tanish** (Roll No: `s24cseu0589`)  
 **Rohit Upadhyay** (Roll No: `s24cseu1359`)  
+**Bharat Kumar** (Roll No: `s24cse2103`)  
 
 *Department of Computer Science Engineering & Technology, Bennett University, Greater Noida, India*  
 *Course: CSET485 — AI and Society (Fall 2026)*  

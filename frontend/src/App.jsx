@@ -941,7 +941,7 @@ export default function App() {
             <strong>QRShield</strong> — CSET485 AI and Society Course Project
           </div>
           <div>
-            Team: Harshit Pahuja (s24cseu0736) • Hemang Nag (s24cseu0728) • Saatvik Sharma (s24cseu2097) • Tanish (s24cseu0589) • Rohit Upadhyay (s24cseu1359)
+            Team: Harshit Pahuja (s24cseu0736) • Hemang Nag (s24cseu0728) • Saatvik Sharma (s24cseu2097) • Tanish (s24cseu0589) • Rohit Upadhyay (s24cseu1359) • Bharat Kumar (s24cse2103)
           </div>
           <div style={{ marginTop: '4px', fontSize: '0.72rem' }}>
             Disclaimer: Metrics reported (Fusion Test Accuracy 0.988, ROC-AUC 0.997, Brier 0.010) reflect the internal 10,000-sample development split. Real-world distribution shifts may alter detection efficacy.

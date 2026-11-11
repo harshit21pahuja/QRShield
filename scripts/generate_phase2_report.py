@@ -59,6 +59,7 @@ def build_markdown_report() -> str:
 **Saatvik Sharma** (Roll No: `s24cseu2097`)  
 **Tanish** (Roll No: `s24cseu0589`)  
 **Rohit Upadhyay** (Roll No: `s24cseu1359`)  
+**Bharat Kumar** (Roll No: `s24cse2103`)  
 
 *Department of Computer Science Engineering & Technology, Bennett University, Greater Noida, India*  
 *Course: CSET485 — AI and Society (Fall 2026)*  
@@ -305,6 +306,7 @@ def build_docx_ieee():
         "Saatvik Sharma (Roll No: s24cseu2097)\n"
         "Tanish (Roll No: s24cseu0589)\n"
         "Rohit Upadhyay (Roll No: s24cseu1359)\n"
+        "Bharat Kumar (Roll No: s24cse2103)\n"
         "Department of Computer Science Engineering & Technology\n"
         "Bennett University, Greater Noida, India"
     )
@@ -981,8 +983,8 @@ def build_html_ieee():
       <h1 class="paper-title">QRShield: Explainable Multimodal Quishing Detection with Zero-Contact Static Analysis</h1>
       <div class="team-id">*Team ID: 54</div>
       <div class="author-block">
-        <strong>Harshit Pahuja</strong> (Roll No: s24cseu0736), <strong>Hemang Nag</strong> (Roll No: s24cseu0728),<br>
-        <strong>Saatvik Sharma</strong> (Roll No: s24cseu2097), <strong>Tanish</strong> (Roll No: s24cseu0589), <strong>Rohit Upadhyay</strong> (Roll No: s24cseu1359)
+        <strong>Harshit Pahuja</strong> (Roll No: s24cseu0736), <strong>Hemang Nag</strong> (Roll No: s24cseu0728), <strong>Saatvik Sharma</strong> (Roll No: s24cseu2097),<br>
+        <strong>Tanish</strong> (Roll No: s24cseu0589), <strong>Rohit Upadhyay</strong> (Roll No: s24cseu1359), <strong>Bharat Kumar</strong> (Roll No: s24cse2103)
       </div>
       <div class="affil-block">
         Department of Computer Science Engineering & Technology, Bennett University, Greater Noida, India<br>
